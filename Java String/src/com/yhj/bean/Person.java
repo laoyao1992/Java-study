@@ -4,6 +4,10 @@ public class Person implements Comparable{
 	private String name;
 	private int age;
 	
+	public Person() {
+		super();
+	}
+	
 	public Person(String name, int age) {
 		this.name = name;
 		this.age = age;
@@ -43,11 +47,12 @@ public class Person implements Comparable{
 	public String toString() {
 		return name+":"+age;
 	}
-//	public int compareTo(Object o) {
-//		Person p = (Person)o;
-//		
-//		int temp = this.age - p.age;
-//		return temp==0?this.name.compareTo(p.name):temp;
-//	}
-//	
+	
+	public int compareTo(Object o) {
+		Person p = (Person)o;
+		
+		int temp = this.age - p.age;
+		return temp==0?this.name.compareTo(p.name):temp;
+	}
+	
 }
